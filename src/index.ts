@@ -11,11 +11,11 @@ if (require("electron-squirrel-startup")) {
 }
 
 async function getPartners() {
-  const user = "postgres";
-  const password = "postgres";
-  const host = "localhost";
-  const port = 5432;
-  const database = "demo_25_01";
+  const user = process.env.POSTGRES_USER;
+  const password = process.env.POSTGRES_PASSWORD;
+  const host = process.env.POSTGRES_HOST;
+  const port = +process.env.POSTGRES_PORT;
+  const database = process.env.POSTGRES_DB_NAME;
 
   const client = new Client({
     user,
