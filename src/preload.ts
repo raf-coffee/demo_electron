@@ -1,16 +1,5 @@
 import { contextBridge, ipcRenderer } from "electron";
-
-type Partner = {
-  id: number;
-  organization_type: string;
-  name: string;
-  ceo: string;
-  email: string;
-  phone: string;
-  address: string;
-  tax_id: string;
-  rating: number;
-};
+import type { Partner } from "../types";
 
 const api = {
   getPartners: () => ipcRenderer.invoke("getPartners"),
